@@ -216,6 +216,12 @@ conf t
 	sh ip eigrp nei
 
 R4:
+conf t
+	router eigrp 100
+	network 10.1.4.4
+	network 10.1.8.8
+	no auto-summary
+end
   
 R4:
 config t
