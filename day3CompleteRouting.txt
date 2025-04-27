@@ -1,5 +1,29 @@
-Day3 Network Engineer
+Day3 Network Engineer JOB INTERVIEW QUESTIONS FOR LVL 1 NOC-SOP POSITIONS.
 3.1 Interpret the components of routing table
+A routing table is a database sometimes called forward information base(FIB) that is used by routing devices to take.
+go to remote networks:
+Linux: netstat -rn
+windows: route print
+Cisco: show ip route
+Routing protocol code: exclusive on Cisco, Juniper, Fortinet, Palo Alto
+Mr.Bodds = mpls, rip, bgp, ospf d- simble , statit routing d is for default 
+Prefix: A network prefix is a network route
+show ip route connected | inc,C
+Network mask: Is a portion of the ip add that seperates the host and the networkID
+The IP add of the PC is: 192.168.10.101/27, what is the network add: 0 32 64 96 [Network address]
+The IP add of the PC is: 192.168.10.95/28, what is the network add: 0 16 32 48 64 [Network address]
+The IP add of the PC is: 192.168.10.43/29, what is the network add:
+Next hop: Is the IP add of an Ingress router:
+c:\tracert www.x-art.com
+administrative distance: Indian Interview: 
+BGP = 20e, 200i, RIP 120 eigrp = 90 ospf=110 static route=1 isis=115
+Metric used in routing for cost and distance: How much
+OSPF - Bandwith RIP-hopcount, EIGRP-bandwith and delay
+BGP-Path Attributes
+
+gateway of last resort: AKA default Gateway is a catch all route for unknown Networks
+GMG - if none no internet
+
 3.1.a Routing protocol code
 3.1.b Prefix
 3.1.c Network mask
@@ -33,7 +57,7 @@ config t
  no router ospf 1
  do sh ip protocols
 ###### give IP address/pri/secondary default GW to S1 and S2:
-@@S1
+@@S1 or 61 
 config t
 int e1/0
  no shut
@@ -111,10 +135,10 @@ config t
 int e0/0
  ip add 10.2.1.101 255.255.255.0
  no shut
-P1: Creating Floating STATIC routes on p1 for vlan 200 and vlan 20:
+P1: Creating Floating STATIC routes using longest prefix on p1 for vlan 200 and vlan 20:
 config t
 ip route  192.168.1.128 255.255.255.224 10.2.1.1 1
-ip route  192.168.1.130 255.255.255.255 10.2.1.2 10
+ip route  192.168.1.130 255.255.255.255 10.2.1.2 
 ! /32 is better than /27: longest prefix Rule.
 do sh ip route static
 p2:
@@ -192,21 +216,7 @@ conf t
 	sh ip eigrp nei
 
 R4:
-config t
-router eigrp 100
- no auto-summary
- network 10.1.4.8 0.0.0.3
- network 10.1.4.4 0.0.0.3
- end
-!HOW TO CHECK IF EIGRP IS WORKING PROPERLY:
-SIR: show ip protocols
-SIEN: show ip EIGRP neighbors --> super, meron kapitbahay
-SIET: show ip eigrp topology --> super, madami ang P, P lahat
-show ip eigrp traffic
-show ip route eigrp
-
-!!Multi Area OSPF FOR nETWOR eNGINEERS:
-OSPF NETWORK:
+  
 R4:
 config t
 Int loopback 0
