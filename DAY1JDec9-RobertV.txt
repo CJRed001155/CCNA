@@ -250,7 +250,7 @@ ephone-dn 8
 ephone-dn 10
  number 5298
 Ephone 1
-  Mac-address CCD8.C1FA.EE43
+  Mac-address B4E9.B0B1.715B
   type 8945
   button 1:8 2:7 3:6 4:5
   restart
